@@ -1,0 +1,30 @@
+<template name="cadastroForm">
+    <form class="form-horizontal cadastroForm">
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nome">Nome</label>
+                <div class="col-md-4">
+                    <input value="{{nome}}" name="nome" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="matricula">Matricula</label>
+                <div class="col-md-4">
+                    <input value="{{matricula}}" name="matricula" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="curso">Curso</label>
+                <div class="col-md-4">
+                    <input value="{{curso}}" name="curso" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+  {{> buttons}}
+    </form>
+</template>
+
+  <template name="buttons">
+    <div class="row">
+      <button class="btn btn-sm btn-primary pull-right m-t-n-xs salvar"> Salvar</button>
+      <button class="btn btn-sm btn-default pull-right m-t-n-xs cancelar"> Cancelar</button>
+    </div>
+  </template>
