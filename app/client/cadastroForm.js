@@ -1,6 +1,12 @@
+import './imports/db/aluno.js';
+
+Template.cadastroForm.onCreated(function () {
+  Meteor.subscribe('alunos');
+});
+
 Template.cadastroForm.helpers({
-  counter: function () {
-    return Session.get('counter');
+  alunos: function () {
+    return Alunos.find().fetch()[0];
   }
 });
 
@@ -11,7 +17,7 @@ Template.cadastroForm.events({
       matricula: document.getElementsByName('matricula')[0].value, 
       curso: document.getElementsByName('curso')[0].value 
     };
-    //insert
+    Meteor.call('aluno.insert', objCadastro.nome);
   }
 });
 
